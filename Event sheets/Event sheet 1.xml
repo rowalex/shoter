@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="score" sid="8840349653445473" static="0" type="number">1000</variable>
+        <variable constant="0" name="Hp" sid="9929496643879959" static="0" type="number">20</variable>
+        <event-block sid="5959456237503058">
+            <conditions>
+                <condition id="1" name="On any click" sid="341629158310914" type="Mouse" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="2712902365004207" type="hero">
+                    <param id="0" name="Object">pyla</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6424618795772773">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9058683416221198" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="5232718900769231" type="hero">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="3200870701663425" type="zombe">
+                    <param id="0" name="X">hero.X</param>
+                    <param id="1" name="Y">hero.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="4648893368810976" type="vrag">
+                    <param id="0" name="X">hero.X</param>
+                    <param id="1" name="Y">hero.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="5016479879528392" type="Sprite">
+                    <param id="0" name="X">hero.X</param>
+                    <param id="1" name="Y">hero .Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4495638505982311">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4084911019548504" type="zombe">
+                    <param id="0" name="Object">pyla</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="194845793299292" type="zombe" />
+                <action id="-9" name="Destroy" sid="6005625474309947" type="pyla" />
+            </actions>
+        </event-block>
+        <event-block sid="4896792348764192">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="1883175643377337" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="4081402554597683" type="spawner">
+                    <param id="0" name="Object">zombe</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4701020818864788">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4268826066574745" type="hero">
+                    <param id="0" name="Object">zombe</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="5546399631380906" type="System">
+                    <param id="0" name="Variable">Hp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6854456462666615">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8987521295257233" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="5029954864053529" type="health">
+                    <param id="0" name="Width">Hp*31.15</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3131742351993296">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4042576711440227" type="System">
+                    <param id="0" name="Variable">Hp</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8588845606366955" type="hero" />
+            </actions>
+        </event-block>
+        <event-block sid="1595883620032066">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="4320863902592264" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="2521682609244009" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="3750184879197539" type="hero">
+                    <param id="0" name="Object">pyla</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1696298593430297">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2884794858550014" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="8788685960616325" type="tyrel">
+                    <param id="0" name="Object">pyla</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Rotate" id="1" name="Set acceleration" sid="2753953349815473" type="tyrel">
+                    <param id="0" name="Acceleration">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2124907840947423">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6383663712685297" type="spawner">
+                    <param id="0" name="Object">pyla</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="844501435123341" type="spawner">
+                    <param id="0" name="Instance variable">SpawnerHp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="9801792595457553" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="9493134215205868" type="pyla" />
+            </actions>
+        </event-block>
+        <event-block sid="9182154483503918">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="4143439968731333" type="spawner">
+                    <param id="0" name="Instance variable">SpawnerHp</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7486636713587865" type="spawner" />
+                <action id="0" name="Spawn another object" sid="8691313639577108" type="spawner">
+                    <param id="0" name="Object">zombe</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="2627959393512626" type="pyla" />
+            </actions>
+        </event-block>
+        <event-block sid="9417345045290567">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2701005350775292" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="8844257569416051" type="csore">
+                    <param id="0" name="Text">score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9745115516172019">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5415474334298893" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">250</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5067879150119354">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="1393142381209319" type="Keyboard">
+                            <param id="0" name="Key">121 (F10)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="2550448141793793" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">-250</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1577068042430317" type="hero">
+                            <param id="0" name="Object">tyrel</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3368836840229359">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3483371490549467" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2831644553365629">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="4800280393872817" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="5605149283045921" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">-100</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="1331193394087263" type="System">
+                            <param id="0" name="Variable">Hp</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6276821191350941">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2145599020975324" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="2777263858200291" type="vrag">
+                    <param id="0" name="Object">bullet</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7366876426322819">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7491795833465041" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="3100626977613951" type="vragspawner">
+                    <param id="0" name="Object">vrag</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5165306076589324">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5936174255784883" type="hero">
+                    <param id="0" name="Object">bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="9817522215671392" type="System">
+                    <param id="0" name="Variable">Hp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="397094351727594" type="bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="7171444020934318">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7553867544795857" type="hero">
+                    <param id="0" name="Object">vrag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4207822743273363" type="hero" />
+            </actions>
+        </event-block>
+        <event-block sid="9776251946885587">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1963814360882781" type="vrag">
+                    <param id="0" name="Object">pyla</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="4823541289427105" type="vrag">
+                    <param id="0" name="Instance variable">vragHp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1144790220080087" type="pyla" />
+                <action id="-11" name="Subtract from" sid="9739057534193638" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="958023705276167">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="4926095932162029" type="vrag">
+                    <param id="0" name="Instance variable">vragHp</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="412267296276656" type="vrag" />
+                <action id="-9" name="Destroy" sid="2751477651087577" type="pyla" />
+            </actions>
+        </event-block>
+        <event-block sid="9132315746049462">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4361191475043763" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">1000</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5978111473905165">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="3045165616221167" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="1122079380379435" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">-1000</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="5321596357947237" type="hero">
+                            <param id="0" name="Object">Sprite3</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4816798357453558">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9347976619553064" type="vragspawner">
+                    <param id="0" name="Object">pyla</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="2315260709299964" type="vragspawner">
+                    <param id="0" name="Instance variable">Hp111111</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="9212849535334073" type="pyla" />
+                <action id="-11" name="Subtract from" sid="6329936698549165" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7843402414723643">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="2877216013547677" type="vragspawner">
+                    <param id="0" name="Instance variable">Hp111111</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2586598517537938" type="vragspawner" />
+                <action id="0" name="Spawn another object" sid="9323685791136889" type="vragspawner">
+                    <param id="0" name="Object">vrag</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5346682148473719">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6938747251309832" type="Sprite2">
+                    <param id="0" name="Instance variable">Variable1</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9106052014050422" type="Sprite2" />
+                <action id="0" name="Spawn another object" sid="2930561000712454" type="Sprite2">
+                    <param id="0" name="Object">Sprite</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6653394128492299" type="pyla" />
+            </actions>
+        </event-block>
+        <event-block sid="2980502539976492">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9807403097615446" type="Sprite2">
+                    <param id="0" name="Object">pyla</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="1473732613653269" type="Sprite2">
+                    <param id="0" name="Instance variable">Variable1</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="8246572455843425" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="5865188156132861" type="pyla" />
+            </actions>
+        </event-block>
+        <event-block sid="2119545034771207">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6125886375535941" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="2242544791027115" type="Sprite2">
+                    <param id="0" name="Object">Sprite</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="462999797526217">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1782111215274547" type="Sprite">
+                    <param id="0" name="Object">pyla</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="6823163306203524" type="Sprite">
+                    <param id="0" name="Instance variable">пудж</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="403032931278151">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6956638263101988" type="Sprite">
+                    <param id="0" name="Instance variable">пудж</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8011947315157744" type="Sprite" />
+            </actions>
+        </event-block>
+        <event-block sid="8425870045409345">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1551838201744213" type="Sprite">
+                    <param id="0" name="Object">hero</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="908592435651047" type="hero" />
+            </actions>
+        </event-block>
+        <event-block sid="5599129066948327">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8667471467488254" type="Sprite3">
+                    <param id="0" name="Object">zombe</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1178324198651048" type="zombe" />
+            </actions>
+        </event-block>
+        <event-block sid="936987495068025">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6767520689939875" type="Sprite3">
+                    <param id="0" name="Object">vrag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2153141746987346" type="vrag" />
+            </actions>
+        </event-block>
+        <event-block sid="1438035146123624">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8995426269089917" type="Sprite3">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="784992586902416" type="Sprite" />
+            </actions>
+        </event-block>
+        <event-block sid="717420839811892">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="709058150268974" type="System">
+                    <param id="0" name="Interval (seconds)">0.3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2146187243781851" type="Sprite3" />
+            </actions>
+        </event-block>
+        <event-block sid="2570491483494261">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2396828935501429" type="Sprite3">
+                    <param id="0" name="Object">spawner</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="985329251924278" type="spawner" />
+            </actions>
+        </event-block>
+        <event-block sid="496574699470432">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1195876968821618" type="Sprite3">
+                    <param id="0" name="Object">Sprite2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="329905840305648" type="Sprite2">
+                    <param id="0" name="Instance variable">Variable1</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5448695264175421">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5752224512688784" type="Sprite3">
+                    <param id="0" name="Object">vragspawner</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="4308360760925655" type="vragspawner">
+                    <param id="0" name="Instance variable">Hp111111</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5857122087515836">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8018138905499824" type="Sprite5">
+                    <param id="0" name="Object">pyla</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3455693902153813" type="pyla" />
+            </actions>
+        </event-block>
+        <event-block sid="6006131615504977">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7448812562477538" type="pyla">
+                    <param id="0" name="Object">Sprite7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="6111726985843994" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
